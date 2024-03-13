@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android"
+        android:shape="oval">
+
+        <!-- Dairenin arka plan rengi -->
+        <solid android:color="#F4F4F5" />
+
+        <!-- Dairenin kenarlık rengi ve genişliği -->
+        <stroke
+            android:width="3dp"
+            android:color="#E9EAEA" />
+
+        <!-- Dairenin boyutları -->
+        <size
+            android:width="64dp"
+            android:height="64dp" />
+    </shape>
