@@ -1,20 +1,12 @@
 package com.example.cleanarchitecture.ui.profile.data.repo
 
 import com.example.cleanarchitecture.ui.profile.data.datasource.ProfileDataSource
+import com.example.cleanarchitecture.ui.profile.data.response.ProfileResponse
+import javax.inject.Inject
 
-class ProfileRepositoryImpl(
-
+class ProfileRepositoryImpl@Inject constructor(
     private val dataSource: ProfileDataSource
 ):ProfileRepository {
-
-    override fun getUser( id: Int,
-                          name: String,
-                          username: String,
-                          email: String,
-                          phone: String,) =
-        dataSource.getUser(id=id,email = email, username = username, name = name, phone = phone)
-
-
-
+    override suspend  fun getUser(url:String): ProfileResponse = dataSource.getUser(url)
 
 }

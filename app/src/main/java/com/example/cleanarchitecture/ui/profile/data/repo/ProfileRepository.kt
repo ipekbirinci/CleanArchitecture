@@ -2,15 +2,9 @@ package com.example.cleanarchitecture.ui.profile.data.repo
 
 import android.database.Observable
 import com.example.cleanarchitecture.ui.profile.data.response.ProfileResponse
+import retrofit2.Call
 
 interface ProfileRepository {
 
-    fun getUser(
-        id: Int,
-        name: String,
-        username: String,
-        email: String,
-        phone: String,
-
-    ):Observable<ProfileResponse>
+    suspend fun getUser(url:String): ProfileResponse
 }

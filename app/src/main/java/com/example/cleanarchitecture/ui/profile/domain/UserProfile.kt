@@ -1,45 +1,43 @@
 package com.example.cleanarchitecture.ui.profile.domain
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.cleanarchitecture.ui.profile.data.repo.ProfileRepository
 import com.example.cleanarchitecture.ui.profile.data.response.ProfileResponse
-import com.example.cleanarchitecture.ui.profile.data.util.ProfileApiService
-import okhttp3.Response
+import com.example.cleanarchitecture.ui.profile.presentation.ProfileDetailViewModel
+import kotlinx.coroutines.launch
 import retrofit2.Call
-import retrofit2.Callback
 import javax.inject.Inject
 
 class UserProfile @Inject constructor(
     private val profileRepository: ProfileRepository
-) {
-    val stockLiveData = MutableLiveData<List<ProfileResponse>?>()
+): MutableLiveData<ProfileResponse>(){
 
-    fun getUser() {
-        profileRepository.getUser().enqueue(object : Callback<List<ProfileResponse>> {
-            override fun onResponse(call: Call<List<ProfileResponse>>, response: Response<List<ProfileResponse>>) {
+    companion object {
+        private const val URL =
+            "https://jsonplaceholder.typicode.com/users"
+    }
+
+    data class Params(
+        val id: Int,
+        val name: String,
+        val username: String,
+        val email: String,
+        val phone: String,
+    )
 
 
-                if(response.isSuccessful)
-                {
-                    Log.d("asssd",response.body().toString())
-                    val result = response.body()
-                    if (result.isNullOrEmpty()) {
-                        stockLiveData.value = null
-                        Log.d("respo",stockLiveData.toString())
-                    } else {
-                        stockLiveData.value = result
-                    }
-                }else{
-
-                    Log.d("sdfsdf",response.message())
+     fun execute(
+        viewModel: ProfileDetailViewModel,
+        input: Params?
+    ): MutableLiveData<ProfileResponse> {
+        return MutableLiveData<ProfileResponse>().apply {
+            input?.let {
+                viewModel.viewModelScope.launch {
+                    value =
+                        profileRepository.getUser(URL+it.id+it.name+it.username+it.email+it.phone)
                 }
-
             }
-
-            override fun onFailure(call: Call<List<ProfileResponse>>, t: Throwable) {
-                Log.e("Failure", t.message.orEmpty())
-            }
-        })
+        }
     }
 }

@@ -6,28 +6,47 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.viewModelScope
 import com.example.cleanarchitecture.R
+import com.example.cleanarchitecture.databinding.FragmentProfileDetailBinding
+import com.example.cleanarchitecture.ui.profile.domain.UserProfile
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class ProfileDetail : Fragment() {
-
-    companion object {
-        fun newInstance() = ProfileDetail()
-    }
-
     private val viewModel: ProfileDetailViewModel by viewModels()
+    private lateinit var binding: FragmentProfileDetailBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_profile_detail, container, false)
+    ): View? {
+        binding = FragmentProfileDetailBinding.inflate(inflater, container, false)
+
+        getProfileData()
+
+
+        return binding.root
+
     }
+
+    private fun getProfileData() {
+        viewModel.getUserProfile.observe(viewLifecycleOwner) {
+            it?.let {
+                binding.run {
+
+                    userNameCapitalLetters.text=it.username
+                    userName.text=it.name
+                    userMail.text=it.email
+                    userPhone.text=it.phone
+
+
+                }
+            }
+        }
+    }
+
 }
