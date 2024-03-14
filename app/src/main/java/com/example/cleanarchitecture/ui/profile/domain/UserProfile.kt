@@ -15,7 +15,7 @@ class UserProfile @Inject constructor(
 
     companion object {
         private const val URL =
-            "https://jsonplaceholder.typicode.com/users"
+            "https://jsonplaceholder.typicode.com/users/1"
     }
 
     data class Params(
