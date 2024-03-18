@@ -17,8 +17,8 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class ProfileDetailFragment : Fragment() {
-    @Inject
+class ProfileDetailFragment @Inject constructor() : Fragment() {
+
     lateinit var viewModel: ProfileDetailViewModel
 
    // private val viewModel:ProfileDetailViewModel by activityViewModels()
@@ -43,7 +43,7 @@ class ProfileDetailFragment : Fragment() {
       //viewModel = ViewModelProvider(requireActivity()).get(ProfileDetailViewModel::class.java)
 
 
-        getProfileData(1,"ipek","pekivi","ipek.birinci@gmail.com","05460677654")
+        getProfileData(1,"ipek","pekibi","ipek.birinci@gmail.com","05460677654")
         return binding.root
 
     }
@@ -71,7 +71,7 @@ class ProfileDetailFragment : Fragment() {
         viewModel= ViewModelProvider(
             requireActivity(),
             defaultViewModelProviderFactory
-        ).get(ProfileDetailViewModel::class.java)
+        )[ProfileDetailViewModel::class.java]
 
         //viewModel = ViewModelProviders.of(this).get(ProfileDetailViewModel::class.java)
       //viewModel = ViewModelProvider(requireActivity()).get(ProfileDetailViewModel::class.java)
