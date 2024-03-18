@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+
 }
 
 android {
@@ -75,6 +77,7 @@ dependencies {
 
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    kapt ("androidx.lifecycle:lifecycle-common-java8:2.2.0")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
@@ -84,6 +87,18 @@ dependencies {
 
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+
+    implementation ("androidx.activity:activity-ktx:1.2.3")
+    implementation ("androidx.fragment:fragment-ktx:1.3.3")
+///
+    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+
+    implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
+    kapt ("androidx.hilt:hilt-compiler:1.0.0-alpha01")
+
+
+
 
 
 

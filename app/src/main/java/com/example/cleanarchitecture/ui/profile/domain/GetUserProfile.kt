@@ -6,10 +6,10 @@ import com.example.cleanarchitecture.ui.profile.data.repo.ProfileRepository
 import com.example.cleanarchitecture.ui.profile.data.response.ProfileResponse
 import com.example.cleanarchitecture.ui.profile.presentation.ProfileDetailViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Call
 import javax.inject.Inject
 
-class UserProfile @Inject constructor(
+
+class GetUserProfile @Inject constructor(
     private val profileRepository: ProfileRepository
 ): MutableLiveData<ProfileResponse>(){
 

@@ -1,15 +1,16 @@
 package com.example.cleanarchitecture.ui.profile.presentation
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
-import com.example.cleanarchitecture.ui.profile.domain.UserProfile
+import com.example.cleanarchitecture.ui.profile.domain.GetUserProfile
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ProfileDetailViewModel @Inject constructor(
-    val getUserProfile: UserProfile
+class ProfileDetailViewModel @Inject  constructor(
+   val getUserProfile: GetUserProfile
 ) : ViewModel() {
 
     fun getUserProfile(id:Int, name: String, username: String, email: String, phone: String)=
-        getUserProfile.execute(this,UserProfile.Params(id,name,username,email,phone))
+        getUserProfile.execute(this,GetUserProfile.Params(id,name,username,email,phone))
 }
