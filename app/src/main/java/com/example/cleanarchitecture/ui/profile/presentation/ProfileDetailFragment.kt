@@ -30,17 +30,12 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
 
 
 
-    override fun onCreateView(
+    /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProfileDetailBinding.inflate(inflater, container, false)
         viewModel = activity?.run { ViewModelProviders.of(this)[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
-
-        /*viewModel= ViewModelProvider(
-            requireActivity(),
-            defaultViewModelProviderFactory
-        ).get(ProfileDetailViewModel::class.java)*/
 
         //viewModel = ViewModelProviders.of(this).get(ProfileDetailViewModel::class.java)
       //viewModel = ViewModelProvider(requireActivity()).get(ProfileDetailViewModel::class.java)
@@ -49,7 +44,7 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
         getProfileData(1,"ipek","pekibi","ipek.birinci@gmail.com","05460677654")
         return binding.root
 
-    }
+    }*/
 
 
     private fun getProfileData (id:Int, name: String, username: String, email: String, phone: String) {
@@ -67,23 +62,29 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
                 }}})
     }
 
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-         super.onViewCreated(view, savedInstanceState)
-        viewModel = activity?.run { ViewModelProviders.of(this)[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
 
-        /*viewModel= ViewModelProvider(
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+         super.onViewCreated(view, savedInstanceState)
+        //viewModel = activity?.run { ViewModelProviders.of(this)[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
+
+
+      /*  viewModel= ViewModelProvider(
             requireActivity(),
             defaultViewModelProviderFactory
         )[ProfileDetailViewModel::class.java]*/
 
         //viewModel = ViewModelProviders.of(this).get(ProfileDetailViewModel::class.java)
-      //viewModel = ViewModelProvider(requireActivity()).get(ProfileDetailViewModel::class.java)
+      viewModel = ViewModelProvider(requireActivity()).get(ProfileDetailViewModel::class.java)
 
         //viewModel = activity?.run { ViewModelProviders.of(this).[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
         // viewModel=ViewModelProvider.of(this).get(ProfileDetailViewModel::class.java)
 
          //viewModel = ViewModelProviders.of(activity!!)[MapViewModel::class.java]
-     }*/
+
+        getProfileData(1,"ipek","pekibi","ipek.birinci@gmail.com","05460677654")
+
+     }
 
 
 }

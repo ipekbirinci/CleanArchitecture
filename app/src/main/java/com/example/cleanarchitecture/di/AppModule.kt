@@ -22,7 +22,6 @@ import javax.inject.Singleton
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
-/*
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -38,11 +37,11 @@ object AppModule {
             .build()
     }
 
-    @Singleton
+    /*@Singleton
     @Provides
     fun provideApi(retrofit:Retrofit):ProfileApiService{
         return retrofit.create(ProfileApiService::class.java)
-    }
+    }*/
 
     @Singleton
     @Provides
@@ -82,18 +81,8 @@ object AppModule {
             throw RuntimeException(e)
         }
     }
-    @Module
-    @InstallIn(SingletonComponent::class)
-    object AppModule {
 
-        @Singleton
-        @Provides
-        fun provideApplicationContext(@ApplicationContext context: Context): Context {
-            return context
-        }
-    }
-    */
-/*@Module
+    /*@Module
     @InstallIn(ActivityComponent::class)
     object ViewModelModule {
 
@@ -102,8 +91,7 @@ object AppModule {
             return ProfileDetailViewModel(getUserProfile)
         }
 
-    }*//*
+    }*/
 
 
-
-}*/
+}

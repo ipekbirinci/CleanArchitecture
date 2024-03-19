@@ -15,22 +15,16 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity(): AppCompatActivity() {
+class MainActivity: AppCompatActivity() {
 
-    private val viewModel: ProfileDetailViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewModel: ProfileDetailViewModel by viewModels()
-
-
-
-
 
 
     }
-
 
 
 

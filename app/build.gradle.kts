@@ -6,6 +6,7 @@ plugins {
     id ("kotlin-parcelize")
 
 
+
 }
 android {
     namespace = "com.example.cleanarchitecture"
@@ -17,6 +18,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,6 +48,9 @@ android {
 
 dependencies {
 
+
+    implementation("androidx.multidex:multidex:2.0.1")
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
@@ -68,11 +73,12 @@ dependencies {
 //
     implementation ("com.google.dagger:hilt-android:2.51")
     kapt ("com.google.dagger:hilt-android-compiler:2.51")
+
     //implementation  ("androidx.hilt:hilt-lifecycle-viewmodel:1.0")
     //kapt "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2"
     //
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+    //implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+    //implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
     implementation ("androidx.cardview:cardview:1.0.0")
 
     implementation ("com.github.bumptech.glide:glide:4.16.0")
@@ -80,11 +86,12 @@ dependencies {
 
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-    kapt ("androidx.lifecycle:lifecycle-common-java8:2.2.0")
+    //kapt ("androidx.lifecycle:lifecycle-common-java8:2.2.0")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
+    //
 
     implementation ("com.google.code.gson:gson:2.10.1")
 
