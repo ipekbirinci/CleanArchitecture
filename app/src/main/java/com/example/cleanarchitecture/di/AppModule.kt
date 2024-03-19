@@ -1,12 +1,17 @@
 package com.example.cleanarchitecture.di
 
+import android.content.Context
 import com.example.cleanarchitecture.ui.profile.data.util.ProfileApiService
+import com.example.cleanarchitecture.ui.profile.domain.GetUserProfile
+import com.example.cleanarchitecture.ui.profile.presentation.ProfileDetailViewModel
 import com.example.cleanarchitecture.util.Constants
 
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -17,6 +22,7 @@ import javax.inject.Singleton
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
+/*
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -76,6 +82,28 @@ object AppModule {
             throw RuntimeException(e)
         }
     }
+    @Module
+    @InstallIn(SingletonComponent::class)
+    object AppModule {
+
+        @Singleton
+        @Provides
+        fun provideApplicationContext(@ApplicationContext context: Context): Context {
+            return context
+        }
+    }
+    */
+/*@Module
+    @InstallIn(ActivityComponent::class)
+    object ViewModelModule {
+
+        @Provides
+        fun provideUserProfile(getUserProfile: GetUserProfile): ProfileDetailViewModel {
+            return ProfileDetailViewModel(getUserProfile)
+        }
+
+    }*//*
 
 
-}
+
+}*/

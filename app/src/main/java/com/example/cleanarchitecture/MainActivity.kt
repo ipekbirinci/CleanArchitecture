@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity @Inject constructor(): AppCompatActivity() {
+class MainActivity(): AppCompatActivity() {
 
     private val viewModel: ProfileDetailViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {

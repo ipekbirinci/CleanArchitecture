@@ -1,6 +1,5 @@
 package com.example.cleanarchitecture.ui.profile.presentation
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.example.cleanarchitecture.ui.profile.domain.GetUserProfile
 import dagger.hilt.android.lifecycle.HiltViewModel
