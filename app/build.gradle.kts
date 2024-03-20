@@ -48,6 +48,8 @@ android {
 
 dependencies {
 
+    implementation("com.google.dagger:hilt-android:2.51")
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
 
     implementation("androidx.multidex:multidex:2.0.1")
 

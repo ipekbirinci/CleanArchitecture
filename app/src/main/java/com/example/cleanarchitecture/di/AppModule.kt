@@ -37,11 +37,11 @@ object AppModule {
             .build()
     }
 
-    /*@Singleton
+    @Singleton
     @Provides
     fun provideApi(retrofit:Retrofit):ProfileApiService{
         return retrofit.create(ProfileApiService::class.java)
-    }*/
+    }
 
     @Singleton
     @Provides
@@ -92,6 +92,8 @@ object AppModule {
         }
 
     }*/
+
+
 
 
 }

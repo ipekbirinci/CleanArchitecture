@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileDetailViewModel @Inject  constructor(
-   val getUserProfile: GetUserProfile
+  private val getUserProfile: GetUserProfile
 ) : ViewModel() {
 
     fun getUserProfile(id:Int, name: String, username: String, email: String, phone: String)=

@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.cleanarchitecture.MainActivity
 import com.example.cleanarchitecture.databinding.FragmentProfileDetailBinding
+import dagger.Binds
 import dagger.Provides
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -30,7 +31,7 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
 
 
 
-    /*override fun onCreateView(
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -44,7 +45,7 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
         getProfileData(1,"ipek","pekibi","ipek.birinci@gmail.com","05460677654")
         return binding.root
 
-    }*/
+    }
 
 
     private fun getProfileData (id:Int, name: String, username: String, email: String, phone: String) {
@@ -66,7 +67,7 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
          super.onViewCreated(view, savedInstanceState)
-        //viewModel = activity?.run { ViewModelProviders.of(this)[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
+        viewModel = activity?.run { ViewModelProviders.of(this)[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
 
 
       /*  viewModel= ViewModelProvider(
@@ -75,12 +76,12 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
         )[ProfileDetailViewModel::class.java]*/
 
         //viewModel = ViewModelProviders.of(this).get(ProfileDetailViewModel::class.java)
-      viewModel = ViewModelProvider(requireActivity()).get(ProfileDetailViewModel::class.java)
+      //viewModel = ViewModelProvider(requireActivity()).get(ProfileDetailViewModel::class.java)
 
         //viewModel = activity?.run { ViewModelProviders.of(this).[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
-        // viewModel=ViewModelProvider.of(this).get(ProfileDetailViewModel::class.java)
+         //viewModel=ViewModelProvider.of(this).get(ProfileDetailViewModel::class.java)
 
-         //viewModel = ViewModelProviders.of(activity!!)[MapViewModel::class.java]
+        // viewModel = ViewModelProviders.of(activity!!)[ProfileDetailViewModel::class.java]
 
         getProfileData(1,"ipek","pekibi","ipek.birinci@gmail.com","05460677654")
 
