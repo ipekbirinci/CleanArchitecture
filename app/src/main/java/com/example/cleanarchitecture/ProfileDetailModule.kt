@@ -38,21 +38,6 @@ import javax.inject.Singleton
         return ProfileDataSource(profileApiService)
     }
 
-    /*@Singleton
-    @Provides
-    fun providesProfileDetailApiService(retrofit: Retrofit): ProfileApiService =
-        retrofit.create(ProfileApiService::class.java)*/
-
-    /*@Module
-    @InstallIn(ActivityComponent::class)
-    object AppModule {
-
-
-        @Provides
-            fun provideApplicationContext(@ActivityContext activity: Activity): Activity {
-            return activity
-        }
-    }*/
 
 
 }
