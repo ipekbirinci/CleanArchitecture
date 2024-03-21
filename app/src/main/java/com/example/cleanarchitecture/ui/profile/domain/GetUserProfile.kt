@@ -1,5 +1,6 @@
 package com.example.cleanarchitecture.ui.profile.domain
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.cleanarchitecture.ui.profile.data.repo.ProfileRepository
@@ -35,7 +36,10 @@ class GetUserProfile @Inject constructor(
             input?.let {
                 viewModel.viewModelScope.launch {
                     value =
-                        profileRepository.getUser(URL+it.id+it.name+it.username+it.email+it.phone)
+                        profileRepository.getUser(URL)
+
+
+
                 }
             }
         }

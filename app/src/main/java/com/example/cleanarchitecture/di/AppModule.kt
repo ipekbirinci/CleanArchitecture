@@ -82,16 +82,7 @@ object AppModule {
         }
     }
 
-    /*@Module
-    @InstallIn(ActivityComponent::class)
-    object ViewModelModule {
 
-        @Provides
-        fun provideUserProfile(getUserProfile: GetUserProfile): ProfileDetailViewModel {
-            return ProfileDetailViewModel(getUserProfile)
-        }
-
-    }*/
 
 
 

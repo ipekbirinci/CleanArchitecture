@@ -3,6 +3,7 @@
 package com.example.cleanarchitecture.ui.profile.presentation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,6 +62,7 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
             it?.let {
                 binding.run {
 
+                    Log.d("Value","Value: ${it.email} ")
                     userNameCapitalLetters.text=it.username
                     userName.text=it.name
                     userMail.text=it.email
@@ -72,15 +74,15 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
 
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
          super.onViewCreated(view, savedInstanceState)
         viewModel = activity?.run { ViewModelProviders.of(this)[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
 
 
-      /*  viewModel= ViewModelProvider(
+      *//*  viewModel= ViewModelProvider(
             requireActivity(),
             defaultViewModelProviderFactory
-        )[ProfileDetailViewModel::class.java]*/
+        )[ProfileDetailViewModel::class.java]*//*
 
         //viewModel = ViewModelProviders.of(this).get(ProfileDetailViewModel::class.java)
       //viewModel = ViewModelProvider(requireActivity()).get(ProfileDetailViewModel::class.java)
@@ -92,7 +94,7 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
 
         getProfileData(1,"ipek","pekibi","ipek.birinci@gmail.com","05460677654")
 
-     }
+     }*/
 
 
 }

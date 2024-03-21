@@ -1,5 +1,5 @@
 
-package com.example.cleanarchitecture
+package com.example.cleanarchitecture.ui.profile
 
 import android.app.Activity
 import android.app.Application
