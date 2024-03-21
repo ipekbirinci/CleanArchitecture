@@ -29,7 +29,14 @@ class ProfileDetailFragment @Inject constructor() : Fragment() {
     private lateinit var binding: FragmentProfileDetailBinding
 
 
+  /*  override fun onCreate(inflater: LayoutInflater, container: ViewGroup?,
+                          savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = FragmentProfileDetailBinding.inflate(inflater, container, false)
+        viewModel = activity?.run { ViewModelProviders.of(this)[ProfileDetailViewModel::class.java] } ?: throw Exception("Invalid Activity")
+        getProfileData(1,"ipek","pekibi","ipek.birinci@gmail.com","05460677654")
 
+    }*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
